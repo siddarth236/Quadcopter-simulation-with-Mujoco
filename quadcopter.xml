@@ -1,0 +1,35 @@
+<mujoco>
+	<option gravity="0 0 -9.81" timestep='0.0001'/>
+	<compiler eulerseq ="zyx"/>
+	<worldbody>
+        <light diffuse=".5 .5 .5" pos="0 0 2" dir="0 0 -1"/>
+		<!-- <geom conaffinity="1" condim="3" name="floor" pos="0 0 0" rgba="0.4 0.3 0.3 1" size="5 5 0.2" type="plane"/> -->
+		<body pos="0 0 0">
+			<joint type="slide" axis="1 0 0"/>
+			<joint type="slide" axis="0 1 0"/>
+			<joint type="slide" axis="0 0 1"/>
+			<joint type="hinge" axis="1 0 0"/>
+			<joint type="hinge" axis="0 1 0"/>
+			<joint type="hinge" axis="0 0 1"/>
+
+			<geom type="box" size=".5 .05 .05" rgba="1 0 0 1" />
+			<geom type="box" size=".05 .5 .05" rgba="1 0 0 1" />
+			
+			<site name='gyro' size='0.001'/>
+		  	<inertial pos='0 0 0' mass='1' diaginertia="0.1 0.1 0.1"/>
+			
+			<geom type="box" size=".15 .02 .02" rgba="0 1 0 1" pos = "-0.4 0 0.1" euler="0 90 0" mass = "0"/>
+			<geom type="cylinder" size="0.1 0.02" rgba="0 0 1 1" pos = "-0.4 0 0.2" euler="0 0 0" mass = "0"/>
+			
+			<geom type="box" size=".15 .02 .02" rgba="0 1 0 1" pos = "0.4 0 0.1" euler="0 90 0" mass = "0"/>
+			<geom type="cylinder" size="0.1 0.02" rgba="0 0 1 1" pos = "0.4 0 0.2" euler="0 0 0" mass = "0"/>
+			
+			<geom type="box" size=".15 .02 .02" rgba="0 1 0 1" pos = "0 -0.4 0.1" euler="0 90 0" mass = "0"/>
+			<geom type="cylinder" size="0.1 0.02" rgba="0 0 1 1" pos = "0 -0.4 0.2" euler="0 0 0" mass = "0"/>
+			
+			<geom type="cylinder" size="0.1 0.02" rgba="0 0 1 1" pos = "0 0.4 0.2" euler="0 0 0" mass = "0"/>
+			<geom type="box" size=".15 .02 .02" rgba="0 1 0 1" pos = "0 0.4 0.1" euler="0 90 0" mass = "0"/>
+
+		</body>
+	</worldbody>
+</mujoco>
